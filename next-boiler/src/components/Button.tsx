@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ButtonProps {
-  children: React.ReactNode;
+  title: React.ReactNode;
   onClick?: () => void;
   variant?: "primary" | "secondary" | "outline" | "danger" | "success" | "warning" | "info";
   size?: "sm" | "md" | "lg";
@@ -17,7 +17,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ 
-    children, 
+    title, 
     onClick, 
     backgroundColor = "",
     variant = "primary", 
@@ -65,7 +65,7 @@ const Button: React.FC<ButtonProps> = ({
       ) : (
         <>
         {iconPrefix && <span className="material-icons">{iconPrefix}</span>}
-        {children}
+        {title}
         {iconSuffix && <span className="material-icons">{iconSuffix}</span>}
       </>
       )}
