@@ -23,7 +23,7 @@ type props = {
   placeholder?: string;
   disabled?: boolean;
   readOnly?: boolean;
-  width?: string;
+  width?: string | number;
   rightIconProps?: {
     onClick?: MouseEventHandler<HTMLDivElement>;
     style?: CSSProperties;
