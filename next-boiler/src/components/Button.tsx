@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ButtonProps {
-  title: React.ReactNode;
+  title: string;
   onClick?: () => void;
   variant?: "primary" | "secondary" | "outline" | "danger" | "success" | "warning" | "info";
   size?: "sm" | "md" | "lg";
@@ -17,8 +17,8 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ 
-    title, 
-    onClick, 
+    title = "title",
+    onClick = () => {},
     backgroundColor = "",
     variant = "primary", 
     size = "md",
@@ -28,8 +28,8 @@ const Button: React.FC<ButtonProps> = ({
     className = "", 
     disabled = false,
     loading = false,
-    iconPrefix,
-    iconSuffix
+    iconPrefix = "",
+    iconSuffix = ""
 }) => {
     const variantStyles = {
       primary: "bg-blue-600 text-white hover:bg-blue-700",
