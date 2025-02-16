@@ -14,11 +14,11 @@ interface RadioButtonProps {
 }
 
 const RadioButton: React.FC<RadioButtonProps> = ({
-    name,
+    name = "",
     dimension = "flex-col",
-    options,
-    selectedValue,
-    onChange,
+    options = [],
+    selectedValue = "",
+    onChange = () => {},
 }) => {
     return (
         <div className={`flex ${dimension}`}>
