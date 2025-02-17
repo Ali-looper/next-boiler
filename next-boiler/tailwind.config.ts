@@ -4,6 +4,7 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -58,6 +59,10 @@ export default {
         bodyRegular12: 'var(--body-regular-12)',
         label: 'var(--label-bold-18)',
       },
+      screens: {
+        "2xs": "200px",
+        "xs": "480px",
+      }
     },
   },
   plugins: [],
