@@ -17,7 +17,7 @@ type props = {
   onBlur?: FocusEventHandler<HTMLInputElement>;
   value?: string | number;
   defaultValue?: string | number;
-  type: "text" | "email" | "password" | "tel" | "number" | "search";
+  type?: "text" | "email" | "password" | "tel" | "number" | "search";
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   placeholder?: string;
@@ -36,20 +36,20 @@ type props = {
 };
 
 const Input: FC<props> = ({
-  onChange,
-  onFocus,
-  onBlur,
+  onChange = () => {},
+  onFocus = () => {},
+  onBlur = () => {},
   value,
-  defaultValue,
-  type,
-  leftIcon,
-  rightIcon,
+  defaultValue = "",
+  type = "text",
+  leftIcon = null,
+  rightIcon = null,
   placeholder = "placeholder text",
-  disabled,
-  readOnly,
+  disabled = false,
+  readOnly = false,
   width = "320px",
-  leftIconProps,
-  rightIconProps,
+  leftIconProps = { onClick: () => {}, style: {} },
+  rightIconProps = { onClick: () => {}, style: {} },
   errorMessage,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -80,7 +80,7 @@ const Input: FC<props> = ({
         onFocus={focusInputElement}
         aria-disabled={disabled}
         aria-readonly={readOnly}
-        className={`w-full h-[64px] box-border rounded-[10px] outline-none border p-5 flex justify-center items-center gap-3 ${
+        className={`w-full h-[64px] box-border rounded-[10px] outline-none border p-5 flex items-center gap-3 ${
           disabled
             ? "cursor-not-allowed bg-slate-50 border-gray-300"
             : "border-[#92A7BE] cursor-text focus-within:border-[#5793d3] focus-within:ring-1 focus-within:ring-[#5793d3] hover:shadow-md hover:border-[#5793d3]"
