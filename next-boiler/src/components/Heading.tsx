@@ -1,0 +1,48 @@
+import React from "react";
+
+interface HeadingProps {
+    level?: "h1" | "h2" | "h3" | "h4" | "h5";
+    weight?: "bold" | "regular";
+    children: React.ReactNode;
+  }
+
+const Heading: React.FC<HeadingProps> = ({
+  level = "h1",
+  weight = "bold",
+  children,
+}) => {
+  const baseStyles = "font-poppins text-gray-900";
+  const styles = {
+    h1: {
+        bold: "text-[25px] font-[700] leading-[37.5px]",
+        regular: "text-[20px] font-[400] leading-[30px]",
+      },
+      h2: {
+        bold: "text-[18px] font-[700] leading-[27px]",
+        regular: "text-[18px] font-[400] leading-[27px]",
+      },
+      h3: {
+        bold: "text-[16px] font-[700] leading-[24px]",
+        regular: "text-[16px] font-[400] leading-[24px]",
+      },
+      h4: {
+        bold: "text-[14px] font-[700] leading-[21px]",
+        regular: "text-[14px] font-[400] leading-[21px]",
+      },
+      h5: {
+        bold: "text-[12px] font-[700] leading-[18px]",
+        regular: "text-[12px] font-[400] leading-[18px]",
+      },
+    };
+  
+
+  const HeadingTag: "h1" | "h2" | "h3" | "h4" | "h5" = level;
+
+  return React.createElement(
+    HeadingTag,
+    { className: `${baseStyles} ${styles[level][weight]}` },
+    children
+  );
+};
+
+export default Heading;
