@@ -1,16 +1,7 @@
 "use client";
-import React from "react";
 
-interface SelectDropdownProps {
-  options?: { value: string; label: string; disabled?: boolean }[];
-  value?: string;
-  onChange?: (value: string) => void;
-  label?: string;
-  className?: string;
-  disabled?: boolean; 
-  readOnly?: boolean;
-  required?: boolean;
-}
+import React from "react";
+import { SelectDropdownProps } from "./types";
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
   options = [],
@@ -42,7 +33,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
         value={value}
         onChange={(e) => !readOnly && onChange(e.target.value)}
         aria-label={label || "Select an option"}
-        disabled={disabled} 
+        disabled={disabled}
         required={required}
       >
         {options.length > 0 ? (

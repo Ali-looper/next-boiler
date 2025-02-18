@@ -1,19 +1,15 @@
-export type ButtonVariant =
-  | 'primary'
-  | 'secondary'
-  | 'outline'
-  | 'danger'
-  | 'success'
-  | 'warning'
-  | 'info';
-
-export type ButtonSize = 'sm' | 'md' | 'lg';
-
 export interface ButtonProps {
   title: string;
   onClick?: () => void;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+  variant?:
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "danger"
+    | "success"
+    | "warning"
+    | "info";
+  size?: "sm" | "md" | "lg";
   className?: string;
   disabled?: boolean;
   loading?: boolean;

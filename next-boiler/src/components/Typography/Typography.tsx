@@ -1,11 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-
-interface TypographyProps {
-  children: React.ReactNode;
-  className?: string;
-}
+import { TypographyProps } from "./types";
 
 const Typography: React.FC<TypographyProps> = ({
   children,
