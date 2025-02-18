@@ -9,7 +9,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="aspect-[170/67] w-[80%] 2xs:w-[150px] xs:w-[170px]">
           <Image src={HtalLogo} alt="Htal logo" className="w-full" />
         </div>
-        <div className="bg-white rounded-[20px] px-3 py-5 w-[90%] 2xs:p-5 xs:w-[80%] xs:p-10 md:w-[638px] min-h-[400px]">
+        <div className="bg-surface-100 rounded-[20px] px-3 py-5 w-[90%] 2xs:p-5 xs:w-[80%] xs:p-10 md:w-[638px] min-h-[400px]">
           {children}
         </div>
       </div>
