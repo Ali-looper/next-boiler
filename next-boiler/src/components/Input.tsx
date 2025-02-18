@@ -16,6 +16,7 @@ type props = {
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   value?: string | number;
+  id?: string;
   defaultValue?: string | number;
   type?: "text" | "email" | "password" | "tel" | "number" | "search";
   leftIcon?: ReactNode;
@@ -40,6 +41,7 @@ const Input: FC<props> = ({
   onFocus = () => {},
   onBlur = () => {},
   value,
+  id,
   defaultValue = "",
   type = "text",
   leftIcon = null,
@@ -99,6 +101,7 @@ const Input: FC<props> = ({
           ref={inputRef}
           className="outline-none h-6 w-full disabled:cursor-not-allowed disabled:text-gray-400 disabled:bg-slate-50"
           placeholder={placeholder}
+          id={id}
           value={value}
           type={type}
           defaultValue={defaultValue}
