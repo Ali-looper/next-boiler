@@ -7,12 +7,15 @@ interface TypographyProps {
   className?: string;
 }
 
-const Typography: React.FC<TypographyProps> = ({ children, className = "" }) => {
+const Typography: React.FC<TypographyProps> = ({
+  children,
+  className = "",
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
-  const handleChange = () => setIsFocused(true); 
+  const handleChange = () => setIsFocused(true);
 
   return (
     <div
@@ -25,7 +28,11 @@ const Typography: React.FC<TypographyProps> = ({ children, className = "" }) => 
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-              child as React.ReactElement<{ onFocus?: () => void; onBlur?: () => void; onChange?: () => void }>,
+              child as React.ReactElement<{
+                onFocus?: () => void;
+                onBlur?: () => void;
+                onChange?: () => void;
+              }>,
               {
                 onFocus: handleFocus,
                 onBlur: handleBlur,
