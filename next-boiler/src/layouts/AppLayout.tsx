@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
-import { Menu } from "lucide-react";
-import Heading from "@/components/Heading";
+import MenuIcon from '@mui/icons-material/Menu';
+import Heading from "@/components/Heading/Heading";
 import Drawer from "@/components/Drawer";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
@@ -25,7 +25,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
       name: "Dashboard",
       key: "dashboard",
       onClick: () => {},
-      icon: <Menu size={16} />,
+      icon: null,
     },
     {
       name: "Container Management",
@@ -95,8 +95,8 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         <header className="flex justify-between items-center py-5 px-10 bg-[#FFF] sticky top-0">
           <div className="flex justify-center items-center gap-5">
             {screenSize < 1024 && (
-              <button>
-                <Menu onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+              <button onClick={() => setIsSidebarOpen(true)}>
+                <MenuIcon />
               </button>
             )}
             {screenSize >= 430 && (

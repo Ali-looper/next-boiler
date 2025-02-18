@@ -1,11 +1,11 @@
 import React, { MouseEventHandler } from "react";
-import Button from "./Button";
+import Button from "./Button/Button";
 import Image from "next/image";
 import HtalLogoWhite from "@/assets/htal-logo-white.webp";
-import { X } from "lucide-react";
+import CloseIcon from '@mui/icons-material/Clear';
 
 type props = {
-  showCloseBtn?: true;
+  showCloseBtn?: boolean;
   className: string;
   items: NavItem[];
   closeDrawer?: () => void;
@@ -33,8 +33,8 @@ const Drawer: React.FC<props> = ({
         <div className="relative">
           <Image src={HtalLogoWhite} alt="htal logo white" />
           {showCloseBtn && (
-            <button className="absolute right-0 top-0" onClick={closeDrawer}>
-              <X size={24} className="text-[#FFF]" />
+            <button className="absolute right-0 top-0 text-[#FFF]" onClick={closeDrawer}>
+              <CloseIcon />
             </button>
           )}
         </div>
