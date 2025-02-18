@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
-import Heading from "@/components/Heading";
-import Typography from "@/components/Typography";
+// import Heading from "@/components/Heading";
+// import Typography from "@/components/Typography";
 // import RadioButton from "./components/RadioButton";
 
 // const options = [
@@ -19,7 +19,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-[32px]">
-      <Typography className="w-[390px] h-[140px]">
+
+      {/* <Typography className="w-[390px] h-[140px]">
         <Heading level="h1" weight="bold">Headline Bold - 25 Poppins</Heading>
         <Heading level="h2" weight="bold">Headline Bold - 20 Poppins</Heading>
       </Typography>
@@ -39,7 +40,10 @@ export default function Home() {
 
       <Typography  className="w-[258px] h-[75px]">
        <Heading level="h2" weight="bold">Label - Bold 18 Poppins</Heading>
-      </Typography>
+      </Typography> */}
+
+
+     
     </div>
   );
 }
