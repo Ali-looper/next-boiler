@@ -1,28 +1,5 @@
 import React from "react";
-
-interface ButtonProps {
-  title: string;
-  onClick?: () => void;
-  variant?:
-    | "primary"
-    | "secondary"
-    | "outline"
-    | "danger"
-    | "success"
-    | "warning"
-    | "info";
-  size?: "sm" | "md" | "lg";
-  className?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  backgroundColor?: string;
-  textColor?: string;
-  width?: string;
-  height?: string;
-  iconPrefix?: string;
-  iconSuffix?: string;
-  hover?: string;
-}
+import { ButtonProps } from "./types";
 
 const Button: React.FC<ButtonProps> = ({
   title = "title",
@@ -40,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   iconSuffix = "",
   hover = "",
 }) => {
-  const variantStyles = {
+  const variantStyles: Record<string, string> = {
     primary: "bg-foundation-100 text-surface-100 hover:bg-foundation-200",
     secondary: "bg-gray-600 text-surface-100 hover:bg-gray-700",
     outline:
@@ -51,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
     info: "bg-cyan-600 text-surface-100 hover:bg-cyan-700",
   };
 
-  const sizeStyles = {
+  const sizeStyles: Record<string, string> = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg",
@@ -67,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
             ? "cursor-not-allowed bg-gray-300 text-gray-500"
             : hover
         }
-        } ${className}`}
+        ${className}`}
       onClick={!loading ? onClick : undefined}
       disabled={disabled || loading}
       aria-disabled={disabled || loading}

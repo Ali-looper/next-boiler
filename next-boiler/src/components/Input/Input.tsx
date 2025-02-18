@@ -1,42 +1,15 @@
 "use client";
 
 import {
-  ChangeEventHandler,
-  CSSProperties,
+
   FC,
-  FocusEventHandler,
-  MouseEventHandler,
-  ReactNode,
+ 
   useCallback,
   useRef,
 } from "react";
+import { InputProps } from "./types";
 
-type props = {
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  onFocus?: FocusEventHandler<HTMLInputElement>;
-  onBlur?: FocusEventHandler<HTMLInputElement>;
-  value?: string | number;
-  id?: string;
-  defaultValue?: string | number;
-  type?: "text" | "email" | "password" | "tel" | "number" | "search";
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
-  placeholder?: string;
-  disabled?: boolean;
-  readOnly?: boolean;
-  width?: string | number;
-  rightIconProps?: {
-    onClick?: MouseEventHandler<HTMLDivElement>;
-    style?: CSSProperties;
-  };
-  leftIconProps?: {
-    onClick?: MouseEventHandler<HTMLDivElement>;
-    style?: CSSProperties;
-  };
-  errorMessage?: string;
-};
-
-const Input: FC<props> = ({
+const Input: FC<InputProps> = ({
   onChange = () => {},
   onFocus = () => {},
   onBlur = () => {},
@@ -60,13 +33,13 @@ const Input: FC<props> = ({
     if (inputRef.current) {
       inputRef.current.focus();
 
-      // Move cursor to the end of the text
+      // Move cursor to the end of the text for applicable input types
       if (!(type === "number" || type === "email")) {
         const length = inputRef.current.value.length;
         inputRef.current.setSelectionRange(length, length);
       }
 
-      // number & email types doesn't support setSelectionRange() method
+      // For number & email types, reset value to trigger input cursor reset
       if (type === "number" || type === "email") {
         const val = inputRef.current.value;
         inputRef.current.value = "";

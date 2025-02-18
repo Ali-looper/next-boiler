@@ -1,11 +1,5 @@
-import React from "react";
-
-interface HeadingProps {
-  level?: "h1" | "h2" | "h3" | "h4" | "h5";
-  weight?: "bold" | "regular";
-  className?: string;
-  children: React.ReactNode;
-}
+import React, { JSX } from "react";
+import { HeadingProps } from "./types";
 
 const Heading: React.FC<HeadingProps> = ({
   level = "h1",
@@ -14,7 +8,10 @@ const Heading: React.FC<HeadingProps> = ({
   children,
 }) => {
   const baseStyles = "font-poppins text-gray-900";
-  const styles = {
+  const styles: Record<
+    "h1" | "h2" | "h3" | "h4" | "h5",
+    { bold: string; regular: string }
+  > = {
     h1: {
       bold: "text-[25px] font-[700] leading-[37.5px]",
       regular: "text-[20px] font-[400] leading-[30px]",
@@ -37,7 +34,7 @@ const Heading: React.FC<HeadingProps> = ({
     },
   };
 
-  const HeadingTag: "h1" | "h2" | "h3" | "h4" | "h5" = level;
+  const HeadingTag: keyof JSX.IntrinsicElements = level;
 
   return React.createElement(
     HeadingTag,
