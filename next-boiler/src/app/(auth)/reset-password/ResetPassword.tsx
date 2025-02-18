@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Input from "@/components/Input";
-import Button from "@/components/Button";
+import React, { useState } from 'react';
+import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 const ResetPassword = () => {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    console.log("Password:", password);
+    console.log('Password:', password);
   };
 
   return (
