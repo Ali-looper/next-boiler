@@ -1,6 +1,7 @@
 "use client";
-import Button from "@/components/Button";
-import Heading from "@/components/Heading";
+
+import { Button } from "@/components/Button";
+import { Heading } from "@/components/Heading";
 import React, { useState, useEffect } from "react";
 import OTPInput from "react-otp-input";
 
@@ -93,7 +94,7 @@ export default function OTPVerificationPage() {
       />
 
       <Heading level="h3" weight="regular" className="mt-8 mb-2">
-        Didn't receive email yet?{" "}
+        Didn&apos;t receive email yet?{" "}
         <span
           className={`text-foundation-100 font-bold  ${
             disableResend ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
