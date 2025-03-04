@@ -31,7 +31,7 @@ export default function ForgotPasswordPage() {
         width="100%"
         placeholder="Enter your Email"
         value={email}
-        defaultValue="user@example.com"
+        // defaultValue="user@example.com"
         onChange={(e) => setEmail(e.target.value)}
       />
       <Button
